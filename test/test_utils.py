@@ -2,10 +2,26 @@
 import time
 
 import mock
+from flaky import flaky
 
 from pyls import _utils
 
 
+# class MockWorkspace(object):
+#     """Mock workspace used by tests that use jedi environment."""
+
+#     def __init__(self):
+#         """Mock workspace used by tests that use jedi environment."""
+#         self._environments = {}
+
+#         # This is to avoid pyling tests of the variable not being used
+#         sys.stdout.write(str(self._environments))
+
+#         # This necessary for the new Jedi 0.17+ API.
+#         self.root_path = ''
+
+
+@flaky(max_runs=3, min_passes=1)
 def test_debounce():
     interval = 0.1
     obj = mock.Mock()
