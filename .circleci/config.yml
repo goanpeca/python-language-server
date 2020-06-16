@@ -6,11 +6,11 @@ jobs:
       - image: "python:2.7-stretch"
     steps:
       - checkout
-      - run: pip install -e .[all] .[test]
-      - run: py.test -v test/
-      - run: pylint pyls test
-      - run: pycodestyle pyls test
-      - run: pyflakes pyls test
+      # - run: pip install -e .[all] .[test]
+      # - run: py.test -v test/
+      # - run: pylint pyls test
+      # - run: pycodestyle pyls test
+      # - run: pyflakes pyls test
 
   python3-test:
     docker:
@@ -18,20 +18,20 @@ jobs:
     steps:
       - checkout
       # To test Jedi environments
-      - run: python3 -m venv /tmp/pyenv
-      - run: /tmp/pyenv/bin/python -m pip install loghub
-      - run: pip install -e .[all] .[test]
-      - run: py.test -v test/
+      # - run: python3 -m venv /tmp/pyenv
+      # - run: /tmp/pyenv/bin/python -m pip install loghub
+      # - run: pip install -e .[all] .[test]
+      # - run: py.test -v test/
 
   lint:
     docker:
     - image: "python:2.7-stretch"
     steps:
     - checkout
-    - run: pip install -e .[all] .[test]
-    - run: pylint pyls test
-    - run: pycodestyle pyls test
-    - run: pyflakes pyls test
+    # - run: pip install -e .[all] .[test]
+    # - run: pylint pyls test
+    # - run: pycodestyle pyls test
+    # - run: pyflakes pyls test
 
   publish:
     docker:

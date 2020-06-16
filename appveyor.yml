@@ -16,12 +16,12 @@ matrix:
 init:
   - "ECHO %PYTHON% %PYTHON_VERSION% %PYTHON_ARCH%"
 
-install:
-  - "%PYTHON%/python.exe -m pip install --upgrade pip setuptools"
-  - "%PYTHON%/python.exe -m pip install .[all] .[test]"
+# install:
+#   - "%PYTHON%/python.exe -m pip install --upgrade pip setuptools"
+#   - "%PYTHON%/python.exe -m pip install .[all] .[test]"
 
-test_script:
-  - "%PYTHON%/Scripts/pytest.exe -v test/"
+# test_script:
+#   - #"%PYTHON%/Scripts/pytest.exe -v test/"
 
 # on_finish:
 #   - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
