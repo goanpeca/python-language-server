@@ -45,6 +45,7 @@ def test_debounce():
     assert len(obj.mock_calls) == 2
 
 
+@flaky(max_runs=3, min_passes=1)
 def test_debounce_keyed_by():
     interval = 0.1
     obj = mock.Mock()
